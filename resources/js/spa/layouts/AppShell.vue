@@ -17,7 +17,7 @@
                     <nav class="space-y-1">
                         <RouterLink
                             class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                            active-class="bg-zinc-900 text-white hover:bg-zinc-900"
+                            active-class="bg-gray-200 text-white hover:bg-gray-200"
                             to="/"
                         >
                             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
@@ -27,7 +27,7 @@
                         </RouterLink>
                         <RouterLink
                             class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                            active-class="bg-zinc-900 text-white hover:bg-zinc-900"
+                            active-class="bg-gray-200 text-white hover:bg-gray-200"
                             to="/assets"
                         >
                             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
@@ -38,7 +38,7 @@
                         </RouterLink>
                         <RouterLink
                             class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                            active-class="bg-zinc-900 text-white hover:bg-zinc-900"
+                            active-class="bg-gray-200 text-white hover:bg-gray-200"
                             to="/scan"
                         >
                             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
@@ -50,7 +50,7 @@
                         <RouterLink
                             v-if="auth.user.value?.is_admin"
                             class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
-                            active-class="bg-zinc-900 text-white hover:bg-zinc-900"
+                            active-class="bg-gray-200 text-white hover:bg-gray-200"
                             to="/users"
                         >
                             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
