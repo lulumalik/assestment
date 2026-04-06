@@ -12,7 +12,7 @@ services:
       APP_ENV: production
       APP_DEBUG: "false"
       LOG_CHANNEL: errorlog
-      APP_URL: https://assestment.cat-platform.web.id
+      APP_URL: https://storage.cat-platform.web.id
       DB_CONNECTION: mysql
       DB_HOST: 172.17.0.1
       DB_PORT: 3306
