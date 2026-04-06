@@ -1,15 +1,20 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: prod
+    build: .
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+      - composer_cache:/root/.composer/cache
+    ports:
+      - "9001:9000"
     environment:
       APP_ENV: production
       APP_DEBUG: "false"
-      APP_URL: http://localhost:8080
+      LOG_CHANNEL: errorlog
+      APP_URL: https://assestment.cat-platform.web.id
       DB_CONNECTION: mysql
-      DB_HOST: host.docker.internal
+      DB_HOST: 172.17.0.1
       DB_PORT: 3306
       DB_DATABASE: assestment
       DB_USERNAME: assestment
@@ -17,17 +22,31 @@ services:
       SESSION_DRIVER: database
       QUEUE_CONNECTION: database
       CACHE_STORE: database
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    restart: unless-stopped
 
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: nginx_prod
+  nginx:
+    image: nginx:latest
     ports:
-      - "8080:80"
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - app
     restart: unless-stopped
+
+  vite-build:
+    image: node:20-alpine
+    restart: "no"
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    command: >
+      sh -c "
+      npm install &&
+      npm install @rollup/rollup-linux-x64-musl lightningcss-linux-x64-musl -D --force &&
+      npm run build
+      "
+
+volumes:
+  composer_cache:
