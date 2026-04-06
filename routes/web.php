@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AssetController;
+use App\Http\Controllers\Api\AssessmentController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ScanController;
 use App\Http\Controllers\Api\UserController;
@@ -20,6 +21,8 @@ Route::prefix('api')->group(function () {
         Route::apiResource('users', UserController::class);
         Route::post('scans', [ScanController::class, 'store']);
         Route::get('scans/{scan}/image', [ScanController::class, 'image'])->name('scans.image');
+        Route::get('assessment/report', [AssessmentController::class, 'report']);
+        Route::get('assessment/analytics', [AssessmentController::class, 'analytics']);
     });
 });
 

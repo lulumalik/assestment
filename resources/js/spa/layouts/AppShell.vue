@@ -48,6 +48,27 @@
                             Scanner SKU
                         </RouterLink>
                         <RouterLink
+                            class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+                            active-class="bg-gray-200 text-white hover:bg-gray-200"
+                            to="/assessment/dashboard"
+                        >
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Analitik Assessment
+                        </RouterLink>
+                        <RouterLink
+                            class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+                            active-class="bg-gray-200 text-white hover:bg-gray-200"
+                            to="/assessment/report"
+                        >
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 4h7l3 3v13H7V4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                                <path d="M14 4v3h3M10 12h4M10 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Laporan Assessment
+                        </RouterLink>
+                        <RouterLink
                             v-if="auth.user.value?.is_admin"
                             class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
                             active-class="bg-gray-200 text-white hover:bg-gray-200"

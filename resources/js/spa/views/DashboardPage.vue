@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
                 <div class="rounded-2xl border border-zinc-200 bg-white p-5">
                     <div class="text-sm font-semibold text-zinc-900">Assets</div>
                     <div class="mt-1 text-sm text-zinc-600">Kelola master asset dan SKU.</div>
@@ -29,6 +29,24 @@
                     <div class="mt-4">
                         <RouterLink class="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-semibold text-zinc-800 hover:bg-zinc-50 hover:text-white" to="/scan">
                             Buka Scanner
+                        </RouterLink>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-zinc-200 bg-white p-5">
+                    <div class="text-sm font-semibold text-zinc-900">Analitik Assessment</div>
+                    <div class="mt-1 text-sm text-zinc-600">Pantau insight scan termasuk performa per kategori.</div>
+                    <div class="mt-4">
+                        <RouterLink class="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-semibold text-zinc-800 hover:bg-zinc-50 hover:text-white" to="/assessment/dashboard">
+                            Buka Analitik
+                        </RouterLink>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-zinc-200 bg-white p-5">
+                    <div class="text-sm font-semibold text-zinc-900">Laporan Assessment</div>
+                    <div class="mt-1 text-sm text-zinc-600">Lihat riwayat scan dan export ke PDF.</div>
+                    <div class="mt-4">
+                        <RouterLink class="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-semibold text-zinc-800 hover:bg-zinc-50 hover:text-white" to="/assessment/report">
+                            Buka Laporan
                         </RouterLink>
                     </div>
                 </div>

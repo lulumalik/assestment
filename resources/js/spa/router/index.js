@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useAuth } from '../stores/auth';
 import AssetFormPage from '../views/AssetFormPage.vue';
+import AssessmentAnalyticsPage from '../views/AssessmentAnalyticsPage.vue';
+import AssessmentReportPage from '../views/AssessmentReportPage.vue';
 import AssetsListPage from '../views/AssetsListPage.vue';
 import DashboardPage from '../views/DashboardPage.vue';
 import LoginPage from '../views/LoginPage.vue';
@@ -20,6 +22,8 @@ export function createSpaRouter() {
             { path: '/assets/new', name: 'asset.new', component: AssetFormPage, meta: { requiresAuth: true } },
             { path: '/assets/:id/edit', name: 'asset.edit', component: AssetFormPage, meta: { requiresAuth: true } },
             { path: '/scan', name: 'scan', component: ScanPage, meta: { requiresAuth: true } },
+            { path: '/assessment/dashboard', name: 'assessment.dashboard', component: AssessmentAnalyticsPage, meta: { requiresAuth: true } },
+            { path: '/assessment/report', name: 'assessment.report', component: AssessmentReportPage, meta: { requiresAuth: true } },
             { path: '/users', name: 'users', component: UsersPage, meta: { requiresAuth: true, requiresAdmin: true } },
         ],
     });
